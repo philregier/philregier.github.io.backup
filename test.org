@@ -6,7 +6,7 @@ This is my second test page.
 
 ** Here is a second-level heading.
 
-#+BEGIN_SRC sh
+#+BEGIN_SRC sh :exports both
 echo 'Here is some code I would like to demonstrate!'
 #+END_SRC
 
