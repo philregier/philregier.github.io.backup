@@ -1,4 +1,7 @@
 #+title: Test Page
+#+HTML_MATHJAX: align: left indent: 5em tagside: left font: Neo-Euler
+
+#+options: :html-scale 2
 
 This is my second test page.
 
@@ -12,3 +15,14 @@ echo 'Here is some code I would like to demonstrate!'
 
 #+RESULTS:
 : Here is some code I would like to demonstrate!
+
+** Let's play with \LaTeX ...
+
+   #+name: naem
+   #+BEGIN_SRC latex :file test.png :exports results :results raw :html-scale 2 :html-resolution 600
+     $e^{i\pi}=-1$
+   #+END_SRC
+
+   #+ATTR_HTML: :align left :width 600
+   #+RESULTS: naem
+   [[file:test.png]]
