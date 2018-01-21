@@ -1,0 +1,5 @@
+# Try without ignoring *.html
+\#*#
+*~
+ltximg/
+_site/

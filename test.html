@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-03-18 Sat 23:23 -->
+<!-- 2018-01-20 Sat 22:59 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Test Page</title>
@@ -225,6 +225,28 @@ for the JavaScript code in this tag.
  }
 /*]]>*///-->
 </script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "left",
+        displayIndent: "5em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "Neo-Euler"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "Neo-Euler"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "left",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
 <div id="content">
@@ -233,9 +255,10 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org26134ac">1. Here is a top-level heading.</a>
+<li><a href="#org94e8565">1. Here is a top-level heading.</a>
 <ul>
-<li><a href="#org3625154">1.1. Here is a second-level heading.</a></li>
+<li><a href="#org8b3f208">1.1. Here is a second-level heading.</a></li>
+<li><a href="#org8738d2a">1.2. Let's play with \LaTeX &#x2026;</a></li>
 </ul>
 </li>
 </ul>
@@ -245,11 +268,11 @@ for the JavaScript code in this tag.
 This is my second test page.
 </p>
 
-<div id="outline-container-org26134ac" class="outline-2">
-<h2 id="org26134ac"><span class="section-number-2">1</span> Here is a top-level heading.</h2>
+<div id="outline-container-org94e8565" class="outline-2">
+<h2 id="org94e8565"><span class="section-number-2">1</span> Here is a top-level heading.</h2>
 <div class="outline-text-2" id="text-1">
-</div><div id="outline-container-org3625154" class="outline-3">
-<h3 id="org3625154"><span class="section-number-3">1.1</span> Here is a second-level heading.</h3>
+</div><div id="outline-container-org8b3f208" class="outline-3">
+<h3 id="org8b3f208"><span class="section-number-3">1.1</span> Here is a second-level heading.</h3>
 <div class="outline-text-3" id="text-1-1">
 <div class="org-src-container">
 <pre class="src src-sh">echo 'Here is some code I would like to demonstrate!'
@@ -261,11 +284,65 @@ Here is some code I would like to demonstrate!
 </pre>
 </div>
 </div>
+
+<div id="outline-container-org8738d2a" class="outline-3">
+<h3 id="org8738d2a"><span class="section-number-3">1.2</span> Let's play with \LaTeX &#x2026;</h3>
+<div class="outline-text-3" id="text-1-2">
+
+<div class="figure">
+<p><img src="test.png" alt="test.png" align="left" width="300" />
+</p>
+</div>
+
+
+\begin{tikzpicture}
+% Body
+\begin{scope}
+\clip (0,1) rectangle (2,-1);
+\draw [fill=orange] (0,0) ellipse (2cm and 1cm);
+\fill [black]  (0,0) ellipse (16mm and 1cm);
+\draw [fill=orange] (0,0) ellipse (14mm and 1cm);
+\draw [fill=white]  (0,0) ellipse (1 and 1);
+\end{scope}
+% Head
+\draw [fill=orange,rotate=-10] (0,10mm) ellipse (6mm and 3mm);
+% Feets
+\draw [fill=orange] (6mm,6mm) ellipse (2mm and 1mm);
+\draw [fill=orange] (10mm,10.5mm) ellipse (1mm and 2mm);
+\draw [fill=orange] (6mm,-6mm) ellipse (2mm and 1mm);
+\draw [fill=orange] (10mm,-10.5mm) ellipse (1mm and 2mm);
+% Eyes
+\tikzset{eye/.pic={
+  \draw [fill=white] (0,0) circle (1.5mm);
+  \fill [black] (0,0.1mm) -- (0.9mm,0) arc (-20:270:1mm);
+  \foreach \x in {-45,-30,-15,0,15,30,45}
+    \draw [rotate around={\x:(0,0)}] (1.5mm,0) -- (1.8mm,0);
+}}
+\path (2mm,12mm) pic{eye};
+\path (1mm,8mm) pic{eye};
+\end{tikzpicture}
+
+
+<div class="org-src-container">
+<pre class="src src-org" id="org2dd6b48">$test
+</pre>
+</div>
+
+<p>
+aha
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash" id="org47f5e0d">sed "s/mycolor/$color/" &lt;&lt;&lt;"$data"
+</pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Phil</p>
-<p class="date">Created: 2017-03-18 Sat 23:23</p>
+<p class="date">Created: 2018-01-20 Sat 22:59</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
