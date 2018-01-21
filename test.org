@@ -1,7 +1,11 @@
+# -*- org-format-latex-options: (:foreground default :html-resolution 600 :background default :scale 4.0 :html-foreground "Black" :html-background "Transparent" :matchers ("begin" "$1" "$" "$$" "\\(" "\\[")); -*-
+# -*- org-latex-packages-alist: (tikz minted)
 #+title: Test Page
 #+HTML_MATHJAX: align: left indent: 5em tagside: left font: Neo-Euler
 
-#+options: :html-scale 2
+#+options: :html-scale 2 :html-resolution 600
+
+#+latex_header: \usepackage{tikz}
 
 This is my second test page.
 
@@ -19,10 +23,68 @@ echo 'Here is some code I would like to demonstrate!'
 ** Let's play with \LaTeX ...
 
    #+name: naem
-   #+BEGIN_SRC latex :file test.png :exports results :results raw :html-scale 2 :html-resolution 600
-     $e^{i\pi}=-1$
+   #+BEGIN_SRC latex :file test.png :exports results :results raw :scale 1.0 :resolution 600
+     $e^{i\pi}+1=0$
    #+END_SRC
 
-   #+ATTR_HTML: :align left :width 600
+   #+ATTR_HTML: :align left :width 300 
    #+RESULTS: naem
    [[file:test.png]]
+
+
+\begin{tikzpicture}
+% Body
+\begin{scope}
+\clip (0,1) rectangle (2,-1);
+\draw [fill=orange] (0,0) ellipse (2cm and 1cm);
+\fill [black]  (0,0) ellipse (16mm and 1cm);
+\draw [fill=orange] (0,0) ellipse (14mm and 1cm);
+\draw [fill=white]  (0,0) ellipse (1 and 1);
+\end{scope}
+% Head
+\draw [fill=orange,rotate=-10] (0,10mm) ellipse (6mm and 3mm);
+% Feets
+\draw [fill=orange] (6mm,6mm) ellipse (2mm and 1mm);
+\draw [fill=orange] (10mm,10.5mm) ellipse (1mm and 2mm);
+\draw [fill=orange] (6mm,-6mm) ellipse (2mm and 1mm);
+\draw [fill=orange] (10mm,-10.5mm) ellipse (1mm and 2mm);
+% Eyes
+\tikzset{eye/.pic={
+  \draw [fill=white] (0,0) circle (1.5mm);
+  \fill [black] (0,0.1mm) -- (0.9mm,0) arc (-20:270:1mm);
+  \foreach \x in {-45,-30,-15,0,15,30,45}
+    \draw [rotate around={\x:(0,0)}] (1.5mm,0) -- (1.8mm,0);
+}}
+\path (2mm,12mm) pic{eye};
+\path (1mm,8mm) pic{eye};
+\end{tikzpicture}
+
+
+#+name: morg
+#+BEGIN_SRC org :results output drawer replace :var test="aha"
+  $test
+#+END_SRC
+
+#+RESULTS:
+:RESULTS:
+aha
+:END:
+
+#+name: colorize
+#+begin_src bash :var data=*this* :var color="blue" :results output
+  sed "s/mycolor/$color/" <<<"$data"
+#+end_src
+
+#+BEGIN_SRC latex :noweb yes :var mytest="sometimes" :post colorize(color="green") :exports results
+\begin{framebox}
+mycolor
+\end{framebox}
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_EXPORT latex
+begin
+green
+end
+#+END_EXPORT
+
