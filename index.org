@@ -1,4 +1,5 @@
 #+TITLE: Placeholder
+#+SETUPFILE: org-html-themes/setup/theme-bigblow.setup
 
 * Welcome!
   This is a work in progress to set up a reasonably minimal "blog" of
@@ -11,7 +12,7 @@
 
    1. [ ] Work out a preliminary structure of org files and HTML trees
       so new content can be added quickly and easily.
-   2. [ ] Figure out a clean way to use an [[https://github.com/fniessen/org-html-themes][existing org theme]]
+   2. [-] Figure out a clean way to use an [[https://github.com/fniessen/org-html-themes][existing org theme]]
    3. [ ] Mock up a simple [[https://www.freecadweb.org/][FreeCAD]] python example
 
 ** TODO Wish list
