@@ -2,11 +2,11 @@
 #+TITLE: Placeholder
 # +SETUPFILE: org-html-themes/setup/theme-bigblow.setup
 
-#+BEGIN_EXPORT html
+#+BEGIN_html
 ---
 title: {{{title}}}
 ---
-#+END_EXPORT
+#+END_html
 
 * Welcome!
   This is a work in progress to set up a reasonably minimal "blog" of
