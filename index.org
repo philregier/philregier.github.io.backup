@@ -1,3 +1,4 @@
+#+OPTIONS: html-style:nil html-scripts:nil
 #+TITLE: Placeholder
 # +SETUPFILE: org-html-themes/setup/theme-bigblow.setup
 
